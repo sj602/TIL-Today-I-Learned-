@@ -1,2 +1,50 @@
+Example.
+APP
+|
+-- ToDoList
+   |
+   --ToDoItem
+-----------------------------------------------
+
 1. Parent TO Child -> Use Prop
+--
+Class APP extends Component {
+  func() {
+    const test = 'blabla'
+    }
+    
+  render() {
+    return (
+      <ToDoList TestProp={test} />
+     )
+ }
+}
+--
+
+
+
 2. Child to Parent -> Use a Callback and States
+
+--
+Class ToDoList extends Component {
+  myCallBack = (dataFromChild) => {
+    [ we will dataFromChild here... ]
+  }
+  
+  render() {
+   <ToDoItem callBackFromParent={ this.myCallBack } />
+  }
+}
+--
+Class ToDoItem extends Component {
+  someFn() {
+    const listInfo = <div>...</div>
+    this.props.callBackFromParent(listInfo)
+  }
+  
+  render() {
+    return(
+    
+    )
+  }
+}
