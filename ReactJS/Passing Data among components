@@ -1,50 +1,6 @@
-Example.
-APP
-|
--- ToDoList
-   |
-   --ToDoItem
------------------------------------------------
+https://medium.com/@ruthmpardee/passing-data-between-react-components-103ad82ebd17 참고
 
-1. Parent TO Child -> Use Prop
---
-Class APP extends Component {
-  func() {
-    const test = 'blabla'
-    }
-    
-  render() {
-    return (
-      <ToDoList TestProp={test} />
-     )
- }
-}
---
-
-
-
-2. Child to Parent -> Use a Callback and States
-
---
-Class ToDoList extends Component {
-  myCallBack = (dataFromChild) => {
-    [ we will dataFromChild here... ]
-  }
-  
-  render() {
-   <ToDoItem callBackFromParent={ this.myCallBack } />
-  }
-}
---
-Class ToDoItem extends Component {
-  someFn() {
-    const listInfo = <div>...</div>
-    this.props.callBackFromParent(listInfo)
-  }
-  
-  render() {
-    return(
-    
-    )
-  }
-}
+정리
+1. Parent to Child : Use Props
+2. Chiild to Parent : Use a Callback and States
+3. Between Siblings : Combind the Above
