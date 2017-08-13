@@ -1,0 +1,2 @@
+1. Parent TO Child -> Use Prop
+2. Child to Parent -> Use a Callback and States
